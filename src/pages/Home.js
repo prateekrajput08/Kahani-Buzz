@@ -48,10 +48,7 @@ export default function Home() {
       <section className="hero">
         <h1>Welcome to KahaniBuzz</h1>
         <p>
-          Hindi Kahani का विशाल संग्रह! Hindi story और story in hindi का खजाना।
-          प्रेम, साहस और मनोरंजन से भरी kahani व kahani in hindi। नई kahaniyan,
-          क्लासिक hindi kahani और शिक्षाप्रद hindi kahaniyan एक जगह।  
-          Stories in hindi का आनंद लें!
+          हिंदी कहानियों का अपार संग्रह! यहाँ आपको प्रेम, साहस और मनोरंजन से भरी रोचक kahani और story in Hindi मिलेंगी। नई-नई कहानियों से लेकर क्लासिक hindi kahani और शिक्षाप्रद kahaniyan in Hindi—सब एक ही जगह उपलब्ध। आनंद लें इन चुनिंदा stories in hindi का और खो जाइए किस्सों की दुनिया में।
         </p>
       </section>
 
@@ -140,3 +137,4 @@ export default function Home() {
     </main>
   );
 }
+
