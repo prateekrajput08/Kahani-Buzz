@@ -1,0 +1,366 @@
+/* ========== Main Layout with Sidebar ========== */
+.story-main-layout {
+  display: flex;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 30px auto 0 auto; /* Removed bottom margin */
+  padding: 0 15px;
+}
+
+/* LEFT SIDE: Story (70%) */
+.story-left {
+  flex: 0 0 70%;
+}
+
+/* Comment out scroll related styles unless enabling */
+.left-section {
+  flex: 7;
+  overflow-y: auto;
+  max-height: calc(100vh - 40px);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.left-section::-webkit-scrollbar {
+  display: none;
+}
+
+/* Story container */
+.story-page-container {
+  max-width: 1200px;     /* Increase max width */
+  width: 80vw;           /* Or use 100% or 90vw as needed */
+  margin: 30px auto;     /* Add vertical margins for spacing */
+  padding: 20px;         /* Add some padding if needed */
+  background: white;     /* Your preferred background */
+  border-radius: 12px;   /* Rounded corners if you want */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Shadow for elevation */
+  display: flex;
+  gap: 30px;
+}
+
+/* RIGHT SIDE: Sidebar (30%) */
+.story-sidebar {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Sidebar scroll styles commented */
+
+.right-section {
+  flex: 3;
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.right-section::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Individual Sidebar Block */
+.sidebar-block {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.sidebar-block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #ff6b6b;
+}
+.sidebar-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-block li {
+  margin-bottom: 8px;
+}
+.sidebar-block a {
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+.sidebar-block a:hover {
+  color: #ff6b6b;
+}
+
+/* ========== Story Detail Card Content ========== */
+.story-detail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.story-detail-image-container {
+  position: relative;
+  width: 100%;
+  height: 450px !important; /* increased from 350px to 450px */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.story-detail-image {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+.story-detail-category {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255, 107, 107, 0.9);
+  padding: 6px 14px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.story-detail-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.story-detail-title {
+  font-size: 2rem;
+  color: #ff5252;
+  font-weight: 700;
+  margin-bottom: 5px;
+  user-select: text;
+  margin-top: -18px;
+}
+
+.story-detail-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  user-select: text;
+  margin-bottom: 20px;
+}
+
+/* Full Story Text */
+.story-full-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  white-space: pre-wrap; /* preserve line breaks */
+  user-select: text;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 992px) {
+  .story-main-layout {
+    flex-direction: column;
+  }
+  .story-left {
+    flex: 100%;
+  }
+  .story-sidebar {
+    display: none; /* hide sidebar on tablet/mobile */
+  }
+}
+
+.story-page-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  width: 80vw;
+  margin: 0 auto;  /* Removed top and bottom margin */
+  padding: 0;      /* Removed vertical padding */
+  background: none !important;  /* remove white background */
+  box-shadow: none !important;  /* remove box shadow if present */
+}
+
+/* Responsive: stack on smaller devices */
+@media (max-width: 800px) {
+  .story-page-container {
+    flex-direction: column;
+    width: 100vw;
+    padding: 10px 10px;
+    gap: 20px;
+  }
+  .left-section {
+    flex: 100%;
+    width: 100%;
+  }
+  .right-section {
+    display: none; /* hide sidebar on small screens */
+  }
+}
+
+.story-detail-card {
+  background: transparent !important; /* no white bg for the inner card */
+  box-shadow: none !important;
+}
+
+.story-audio-player {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.story-audio-player audio {
+  width: 100%;
+  max-width: 500px;
+  outline: none;
+  border-radius: 30px;
+}
+
+/* Default desktop view */
+.story-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Small screens (tablets/mobiles) */
+@media (max-width: 768px) {
+  .story-detail-image-container {
+    height: 220px;   /* reduced height for tablets */
+  }
+  .story-page-container {
+    padding-top: 10px; /* adjust as needed for your navbar height */
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-detail-image-container {
+    height: 180px;   /* reduced height for small mobiles */
+  }
+  .story-page-container {
+    padding-top: 10px; /* adjust as needed for your navbar height */
+    padding-bottom: 10px;
+  }
+}
+
+/* For Story page */
+.story-detail-description,
+.story-full-content {
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+/* Related Stories Section */
+.related-stories {
+  margin-top: 40px;
+  margin-bottom: 18px;
+  margin-left: 5px;
+}
+.related-stories h3 {
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+.related-stories-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.related-story-box {
+  flex: 0 0 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.related-story-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.related-story-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.related-story-title {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  background: #fafafa;
+  text-align: center;
+}
+
+/* Responsive for small screens: stack vertically */
+@media (max-width: 768px) {
+  .related-story-box {
+    flex: 0 0 100%; /* full width */
+  }
+}
+
+/* Additional to remove unwanted gaps between navbar/content/footer */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* If navbar is fixed or sticky, add padding-top here matching navbar height (example: 60px) */
+.story-page-container {
+  padding-top: 10px; /* adjust as needed for your navbar height */
+  padding-bottom: 10px;
+}
+
+/* New style for title below image */
+.story-title-below-image {
+  font-size: 1.1rem;   /* same as description before */
+  font-weight: 700;    /* bold */
+  color: #000;         /* black color */
+  text-align: left;
+  margin: 10px 0 0 0;
+}
+
+@media (max-width: 992px) {
+  .story-detail-image-container {
+    height: 320px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-detail-image-container {
+    height: 220px !important;
+  }
+}
+/* ===== ❤️ Heart Icon Styles ===== */
+.heart-icon {
+  font-size: 22px;
+  color: #ccc;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+.heart-icon:hover {
+  transform: scale(1.15);
+}
+.heart-icon.liked {
+  color: red;
+}
+
+/* Align title + heart nicely */
+.story-title-like-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 15px 0;
+}

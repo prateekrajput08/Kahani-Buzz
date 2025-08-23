@@ -1,0 +1,35 @@
+.aboutus-container {
+  max-width: 80%;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Noto Serif', serif;
+  color: #333;
+  line-height: 1.7;
+}
+
+.aboutus-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff4747;
+}
+
+.aboutus-container ul {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.aboutus-container ul li {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.aboutus-container p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.aboutus-container p,
+.aboutus-container ul {
+  text-align: justify;
+  line-height: 1.6;
+  hyphens: auto;
+}
