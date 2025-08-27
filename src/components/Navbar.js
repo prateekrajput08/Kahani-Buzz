@@ -38,6 +38,13 @@ export default function Navbar() {
           </Link>
         </li>
 
+        <li>
+          <Link to="/advertise" onClick={closeMenu}>
+            <i className="fas fa-bullhorn"></i> <span className="nav-text">Advertise</span>
+          </Link>
+        </li>
+
+
         <CategoryDropdown categories={categories} onCategoryClick={handleCategoryClick} />
 
         <li>
