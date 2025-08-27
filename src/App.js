@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Story from "./pages/Story";
 import AboutUs from "./pages/AboutUs";
+import Advertise from "./pages/Advertise";
 import Contact from "./pages/Contact";
 import { StoriesProvider } from "./contexts/StoriesContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/category/:categoryName" element={<Category />} />
             <Route path="/story/:storyId" element={<Story />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/advertise" element={<Advertise />} />
             <Route path="/contact" element={<Contact />} />
             {/* Add more routes as needed */}
           </Routes>
