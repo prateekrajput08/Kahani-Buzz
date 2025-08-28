@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { StoriesContext } from "../contexts/StoriesContext";
 import { FaArrowRight } from "react-icons/fa";
 import StoryCard from "../components/StoryCard";
-import Loader from "../components/Loader";
+import HomeLoader from "../components/HomeLoader";
 
 export default function Home() {
   const { stories, loading, error } = useContext(StoriesContext);
@@ -18,7 +18,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (loading) return <Loader text="कहानियाँ लोड हो रही हैं..." />;
+  if (loading) return <HomeLoader text="Loading stories..." />;
 
   // === Latest Stories Filtering ===
   const mainStory = stories.find((s) => Number(s.id) === 1);
@@ -64,7 +64,7 @@ export default function Home() {
   // Show only 3 authors on small devices (≤ 600px), else show all 5
   const authorsToShow = windowWidth <= 600 ? allTopAuthors.slice(0, 3) : allTopAuthors;
 
-  if (loading) return <Loader text="Loading stories..." />;
+  if (loading) return <HomeLoader text="Loading stories..." />;
   if (error) return <p>Error loading stories...</p>;
 
   return (
