@@ -1,0 +1,165 @@
+.loader-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Shimmer animation */
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f3f3f3 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Hero Skeleton Title */
+.skeleton-hero-title {
+  width: 320px;
+  height: 32px;
+  margin: 0 auto 20px;
+  border-radius: 6px;
+}
+
+/* Hero Skeleton Lines - base settings */
+.skeleton-hero-line {
+  height: 14px;
+  margin: 6px auto;
+  border-radius: 6px;
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  display: none; /* Hide all by default */
+}
+
+/* Show first two hero lines on large devices */
+.line-1,
+.line-2 {
+  display: block;
+}
+
+/* Line widths */
+.line-1.long,
+.extra.long {
+  width: 80%;
+}
+
+.line-2.short,
+.extra.short {
+  width: 60%;
+}
+
+/* Extra lines hidden by default */
+.extra {
+  display: none;
+}
+
+/* Story Card Skeletons */
+.skeleton-card {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.skeleton-card.small {
+  height: 300px; /* Increased from 150px */
+}
+
+.skeleton-card.large {
+  height: 618px; /* Increased from 320px */
+}
+
+/* Authors Skeleton */
+.authors-row {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.skeleton-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  transition: width 0.3s, height 0.3s;
+}
+
+.skeleton-author-name {
+  height: 12px;
+  width: 80px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+/* Story Grids */
+.latest-stories-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 20px;
+}
+
+.small-stories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  /* Increase length of long lines */
+  .skeleton-hero-line.extra.long {
+    width: 90%;  /* increased from 80% */
+  }
+
+  /* Other existing styles */
+  .skeleton-hero-line.extra {
+    display: block;
+  }
+
+  .skeleton-hero-line {
+    display: none;
+  }
+
+  .line-2 {
+    display: none;
+  }
+
+  .skeleton-avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .skeleton-card {
+  width: 100%;
+  height: 280px;
+}
+
+  .authors-row > .author-card:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Reduce the general vertical gap inside loader page container */
+  .loader-page {
+    gap: 15px !important; /* reduce from 40px to smaller spacing */
+  }
+
+  /* Also keep your existing margin overrides */
+  .trending-authors-section {
+    margin-bottom: 1px !important;
+  }
+
+  .trending-authors-section + .section {
+    margin-top: 1px !important;
+  }
+}
