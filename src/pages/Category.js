@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchStoriesAndCategories } from "../dataService";
 import "./Category.css";
-import Loader from "../components/Loader";
+import CategoryLoader from "../components/CategoryLoader";
 
 export default function Category() {
   const { categoryName } = useParams();
@@ -90,7 +90,7 @@ export default function Category() {
     };
   }, [stories, categories, latestStories, categoryImages]);
 
-  if (loading) return <Loader text="Loading stories..." />;
+  if (loading) return <CategoryLoader text="Loading stories..." />;
   if (error) return <p>Error loading stories: {error.message || error.toString()}</p>;
 
   return (
