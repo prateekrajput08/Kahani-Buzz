@@ -312,8 +312,8 @@ html {
 .sharing-section > div > a,
 .sharing-section > div > button.share-plus-button {
   font-size: 1.5rem;
-  margin-left: 10px;
-  margin-right: 5px;
+  margin-left: 7px;
+  margin-right: 3px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, color 0.3s ease;
   display: inline-flex;
@@ -459,3 +459,4 @@ html {
     height: 220px !important;
   }
 }
+
