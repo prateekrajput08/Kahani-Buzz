@@ -283,7 +283,7 @@ export default function Story() {
           </div>
         )}
         <div className="sharing-section" style={{ marginTop: "2rem" }}>
-          <h3>Share this story</h3>
+          <h3>Share This Story</h3>
           <div>
             <button
               className="share-plus-button"
@@ -452,3 +452,4 @@ export default function Story() {
     </main>
   );
 }
+
